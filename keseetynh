@@ -1,20 +1,20 @@
-#!name=NightMarket Server - Locket Filter Fixed Audio & Time
-#!desc=Fixed Audio Loss, 1 Min Video Limit, Photobooth & Full Bypass
-#!distributor=Nightmarket Server & Fixed
-#!author=MinhHiep08 & Optimized
+#!name=NightMarket Server - Locket Filter Ultimate All-in-One
+#!desc=Locket Gold, Photobooth AI, Profile Badges, Audio Fix & 1 Min Video Limit
+#!distributor=Nightmarket Server & Optimized
+#!author=MinhHiep08 (@minhhiep07)
 # 💬 Discord: https://discord.gg/juY9tw5AJY
 # 🚀 Maintained by: Nightmarket Server
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Locket.png
 #!system=ios
 
 [Rule]
-# Chặn QUIC/UDP cho Locket, RevenueCat và Firebase
+# Chặn QUIC/UDP cho Locket, RevenueCat và Firebase để ép chạy TCP (giúp bắt gói tin chuẩn xác)
 AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,api.revenuecat.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,api.locketcamera.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,locketcamera.com),(PROTOCOL,UDP)),REJECT
 
-# Chặn Sentry Telemetry
+# Chặn Sentry Telemetry (tránh gửi báo cáo lỗi về nhà phát hành)
 DOMAIN-SUFFIX,sentry.io,REJECT
 DOMAIN-SUFFIX,ingest.sentry.io,REJECT
 
